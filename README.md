@@ -9,7 +9,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [https://admin-panel-backend-pkp7.onrender.com/](https://admin-panel-backend-pkp7.onrender.com/) to view it in your browser.
+Open [https://admin-panel-backend-knss.onrender.com/](https://admin-panel-backend-knss.onrender.com/) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
