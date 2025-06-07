@@ -1,0 +1,145 @@
+/* Container for both Login and Signup */
+.auth-container,
+.signup-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #ffffff;
+  padding: 20px;
+  /* For signup which might be simpler, center text */
+  flex-direction: column;
+}
+
+/* For forms with image (login or signup with image) */
+.auth-box {
+  display: flex;
+  width: 850px;
+  background: #ffffff;
+  box-shadow: none;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 40px auto;
+  padding: 40px;
+  border: 1px solid #cccccc; /* light gray border */
+  flex-direction: row;
+}
+
+/* Optional image section (used in login) */
+.auth-image {
+  flex: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.auth-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Form section */
+.auth-form,
+.signup-container form {
+  flex: 1;
+  padding: 50px;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* For Signup without image, center box smaller */
+.signup-container {
+  max-width: 450px;
+  margin: 40px auto;
+  border: 1px solid #cccccc;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: none;
+}
+
+/* Headings */
+.auth-form h2,
+.signup-container h2 {
+  margin-bottom: 25px;
+  font-size: 26px;
+  color: #333;
+}
+
+/* Inputs and select */
+.auth-form input,
+.auth-form select,
+.signup-container input,
+.signup-container select {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #333;
+  transition: 0.2s ease-in-out;
+}
+
+.auth-form input:focus,
+.auth-form select:focus,
+.signup-container input:focus,
+.signup-container select:focus {
+  outline: none;
+  border-color: #999999;
+  box-shadow: none;
+}
+
+/* Buttons */
+.auth-form button,
+.signup-container button {
+  width: 100%;
+  padding: 14px;
+  background: #ffffff;
+  color: #333333;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.3s ease-in-out;
+}
+
+.auth-form button:hover,
+.signup-container button:hover {
+  background: #f0f0f0;
+}
+
+/* Paragraphs and links */
+.auth-form p,
+.signup-container p {
+  margin-top: 18px;
+  color: #666;
+  font-size: 14px;
+}
+
+.auth-form a,
+.signup-container a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-form a:hover,
+.signup-container a:hover {
+  text-decoration: underline;
+}
+
+/* Optional: logo styling */
+.logo-wrapper {
+  margin-bottom: 20px;
+}
+
+.site-logo {
+  width: 120px;
+  height: auto;
+}
