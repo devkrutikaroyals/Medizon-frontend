@@ -13,7 +13,7 @@ const ApproveManufacturer = () => {
 
     if (email) {
       axios
-        .get(`http://localhost:5000/api/auth/approve-manufacturer?email=${email}`)
+        .get(`https://admin-panel-backend-pkp7.onrender.com/api/auth/approve-manufacturer?email=${email}`)
         .then((response) => {
           setMessage(response.data.message);
           setTimeout(() => {

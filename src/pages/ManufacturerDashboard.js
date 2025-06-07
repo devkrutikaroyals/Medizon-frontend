@@ -169,7 +169,7 @@ const ManufacturerDashboard = () => {
     const fetchManufacturerEmail = async () => {
       try {
         const token = getToken();
-        const response = await axios.get("http://localhost:5000/api/auth/me", {
+        const response = await axios.get("https://admin-panel-backend-pkp7.onrender.com/api/auth/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setEmail(response.data.email || "");
@@ -227,7 +227,7 @@ const ManufacturerDashboard = () => {
   const fetchProducts = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get(`http://localhost:5000/api/products/fmanufacturer?t=${Date.now()}`, {
+      const response = await axios.get(`https://admin-panel-backend-pkp7.onrender.com/api/products/fmanufacturer?t=${Date.now()}`, {
         headers: { Authorization: `Bearer ${getToken()}` },
       });
       setProducts(response.data.products || []);
@@ -244,7 +244,7 @@ const ManufacturerDashboard = () => {
     setIsLoading(true);
     try {
       const [productsResponse, { data: allOrders }] = await Promise.all([
-        axios.get(`http://localhost:5000/api/products/fmanufacturer?t=${Date.now()}`, {
+        axios.get(`https://admin-panel-backend-pkp7.onrender.com/api/products/fmanufacturer?t=${Date.now()}`, {
           headers: { Authorization: `Bearer ${getToken()}` },
         }),
         supabase
@@ -295,7 +295,7 @@ const fetchOrders = async () => {
   setIsLoading(true);
   try {
     const productsResponse = await axios.get(
-      `http://localhost:5000/api/products/fmanufacturer?t=${Date.now()}`,
+      `https://admin-panel-backend-pkp7.onrender.com/api/products/fmanufacturer?t=${Date.now()}`,
       {
         headers: { Authorization: `Bearer ${getToken()}` },
       }
@@ -477,7 +477,7 @@ const fetchOrders = async () => {
   //   try {
   //     setIsLoading(true);
   //     const response = await axios.post(
-  //       "http://localhost:5000/api/products/addProduct",
+  //       "https://admin-panel-backend-pkp7.onrender.com/api/products/addProduct",
   //       formData,
   //       {
   //         headers: {
@@ -532,7 +532,7 @@ const fetchOrders = async () => {
     try {
       setIsLoading(true);
       const response = await axios.post(
-        "http://localhost:5000/api/products/addProduct",
+        "https://admin-panel-backend-pkp7.onrender.com/api/products/addProduct",
         formData,
         {
           headers: {
@@ -603,7 +603,7 @@ const fetchOrders = async () => {
     try {
       setIsLoading(true);
       const response = await axios.put(
-        `http://localhost:5000/api/products/${editProduct.id}`,
+        `https://admin-panel-backend-pkp7.onrender.com/api/products/${editProduct.id}`,
         formData,
         {
           headers: {
@@ -638,7 +638,7 @@ const fetchOrders = async () => {
     try {
       setIsLoading(true);
 
-      await axios.delete(`http://localhost:5000/api/products/${id}`, {
+      await axios.delete(`https://admin-panel-backend-pkp7.onrender.com/api/products/${id}`, {
         headers: {
           Authorization: `Bearer ${getToken()}`,
         },
@@ -683,7 +683,7 @@ const fetchOrders = async () => {
           currentOrder.items.map(async (item) => {
             try {
               await axios.put(
-                `http://localhost:5000/api/products/update-stock/${item.product_id}`,
+                `https://admin-panel-backend-pkp7.onrender.com/api/products/update-stock/${item.product_id}`,
                 { quantity: item.quantity }, // positive quantity to restore
                 { headers: { Authorization: `Bearer ${getToken()}` } }
               );
@@ -699,7 +699,7 @@ const fetchOrders = async () => {
           currentOrder.items.map(async (item) => {
             try {
               const response = await axios.put(
-                `http://localhost:5000/api/products/update-stock/${item.product_id}`,
+                `https://admin-panel-backend-pkp7.onrender.com/api/products/update-stock/${item.product_id}`,
                 { quantity: -item.quantity }, // negative quantity to reduce stock
                 { headers: { Authorization: `Bearer ${getToken()}` } }
               );
@@ -771,7 +771,7 @@ const fetchOrders = async () => {
         if (!orderError && orderData.items) {
           for (const item of orderData.items) {
             await axios.put(
-              `http://localhost:5000/api/products/update-stock/${item.product_id}`,
+              `https://admin-panel-backend-pkp7.onrender.com/api/products/update-stock/${item.product_id}`,
               { quantity: item.quantity },
               {
                 headers: {
@@ -1079,7 +1079,7 @@ const generateOrderPDF = (order) => {
       setIsLoading(true);
       const token = getToken();
       const response = await axios.put(
-        "http://localhost:5000/api/auth/update-password",
+        "https://admin-panel-backend-pkp7.onrender.com/api/auth/update-password",
         { email, oldPassword, newPassword },
         {
           headers: { Authorization: `Bearer ${token}` },
