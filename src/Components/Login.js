@@ -16,7 +16,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-    const response = await axios.post("https://admin-panel-backend-knss.onrender.com/api/auth/login", {
+    const response = await axios.post("https://medzionbackend.onrender.com/api/auth/login", {
   email,
   password,
   role,

@@ -13,7 +13,7 @@ const ApproveManufacturer = () => {
 
     if (email) {
       axios
-        .get(`https://admin-panel-backend-knss.onrender.com/api/auth/approve-manufacturer?email=${email}`)
+        .get(`https://medzionbackend.onrender.com/api/auth/approve-manufacturer?email=${email}`)
         .then((response) => {
           setMessage(response.data.message);
           setTimeout(() => {

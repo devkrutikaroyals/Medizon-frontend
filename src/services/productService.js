@@ -1,6 +1,6 @@
 export const createProduct = async (productData) => {
     try {
-      const response = await fetch("https://admin-panel-backend-knss.onrender.com/api/products/create", {
+      const response = await fetch("https://medzionbackend.onrender.com/api/products/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -245,12 +245,12 @@ const MasterDashboard = () => {
   // Fetch total products and companies counts
   useEffect(() => {
     axios
-      .get("https://admin-panel-backend-knss.onrender.com/api/total-products")
+      .get("https://medzionbackend.onrender.com/api/total-products")
       .then((response) => setTotalProducts(response.data.totalProducts || 0))
       .catch((error) => console.error("Error fetching products:", error));
 
     axios
-      .get("https://admin-panel-backend-knss.onrender.com/api/total-manufacturers")
+      .get("https://medzionbackend.onrender.com/api/total-manufacturers")
       .then((response) => setTotalManufacturers(response.data.totalCompanies || 0))
       .catch((error) => console.error("Error fetching total manufacturers:", error));
   }, []);
@@ -260,7 +260,7 @@ const MasterDashboard = () => {
     const token = localStorage.getItem("token");
 
     if (activeSection === "products") {
-      axios.get("https://admin-panel-backend-knss.onrender.com/api/products", {
+      axios.get("https://medzionbackend.onrender.com/api/products", {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((response) => {
@@ -273,7 +273,7 @@ const MasterDashboard = () => {
 
     if (activeSection === "categories") {
       axios
-        .get("https://admin-panel-backend-knss.onrender.com/api/categories", {
+        .get("https://medzionbackend.onrender.com/api/categories", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -286,7 +286,7 @@ const MasterDashboard = () => {
 
     if (activeSection === "companies") {
       axios
-        .get("https://admin-panel-backend-knss.onrender.com/api/manufacturers", {
+        .get("https://medzionbackend.onrender.com/api/manufacturers", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -317,7 +317,7 @@ const MasterDashboard = () => {
   const fetchPendingManufacturers = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("https://admin-panel-backend-knss.onrender.com/api/auth/pending-manufacturers", {
+      const response = await axios.get("https://medzionbackend.onrender.com/api/auth/pending-manufacturers", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -390,7 +390,7 @@ const MasterDashboard = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "https://admin-panel-backend-knss.onrender.com/api/auth/authorize",
+        "https://medzionbackend.onrender.com/api/auth/authorize",
         { email },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -407,7 +407,7 @@ const MasterDashboard = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "https://admin-panel-backend-knss.onrender.com/api/auth/decline-manufacturer",
+        "https://medzionbackend.onrender.com/api/auth/decline-manufacturer",
         { email },
         {
           headers: {
@@ -441,7 +441,7 @@ const MasterDashboard = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.put(
-        "https://admin-panel-backend-knss.onrender.com/api/auth/update-password",
+        "https://medzionbackend.onrender.com/api/auth/update-password",
         { email, oldPassword, newPassword },
         {
           headers: {
@@ -485,7 +485,7 @@ const MasterDashboard = () => {
     setActiveSection("category-products");
 
     try {
-      const response = await axios.get(`https://admin-panel-backend-knss.onrender.com/api/products/by-category/${categoryName}`, {
+      const response = await axios.get(`https://medzionbackend.onrender.com/api/products/by-category/${categoryName}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
